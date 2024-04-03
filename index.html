@@ -69,7 +69,22 @@
         function ambilData() {
             var jumlah = document.getElementById("jumlah").value;
             var pilihan = document.getElementById("pilihan").value;
-            alert("Anda memilih " + jumlah + " " + pilihan);
+            
+            if (jumlah !== '') {
+                var bukuDitemukan = false;
+                for (var i = 0; i < buku.length; i++) {
+                    if (buku[i].nama === pilihan) {
+                        bukuDitemukan = true;
+                        alert("Buku ditemukan " + jumlah + " " + pilihan);
+                        break;
+                    }
+                }
+                if (!bukuDitemukan) {
+                    alert("Buku tidak ditemukan");
+                }
+            } else {
+                alert("Jumlah tidak boleh kosong");
+            }
         }
 
         // Fungsi untuk mengubah elemen pada halaman
