@@ -54,10 +54,17 @@
             <option value="lupin">Lupin</option>
             <option value="aladin">Aladin</option>
         </select>
-        <button id="tombol">Submit</button>
+        <button id="tombol" onclick="ambilData()">Submit</button>
     </div>
 
     <script>
+        // Fungsi untuk mengambil data jumlah dan pilihan yang dipilih
+        function ambilData() {
+            var jumlah = document.getElementById("jumlah").value;
+            var pilihan = document.getElementById("pilihan").value;
+            alert("Anda memilih " + jumlah + " " + pilihan);
+        }
+
         // Fungsi untuk mengubah elemen pada halaman
         function changeProfile(name, nim, kelas, photo) {
             document.getElementById("name").innerText = name;
@@ -68,13 +75,6 @@
 
         // Panggil fungsi changeProfile dengan data Anda
         changeProfile("Khansa Maira Ifana Putri", "6701223094", "D3SI 46-04", "foto.jpeg");
-
-        // Event listener untuk tombol submit
-        document.getElementById("tombol").addEventListener("click", function() {
-            var jumlah = document.getElementById("jumlah").value;
-            var pilihan = document.getElementById("pilihan").value;
-            alert("Anda memilih " + jumlah + " " + pilihan);
-        });
     </script>
 </body>
 </html>
